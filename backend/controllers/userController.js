@@ -19,8 +19,10 @@ try {
         return res.json({success:false,message:"Invalid credentials"})
     }
     const token = createToken(user._id);
+    res.json({success:true,token})
 } catch (error) {
-    
+    console.log(error);
+    res.json({success:false,message:"Error"})
 }
 }
 
